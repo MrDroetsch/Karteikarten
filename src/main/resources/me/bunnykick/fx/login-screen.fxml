@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:id="grid" fx:controller="me.bunnykick.fx.HelloController" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" hgap="10" vgap="10" styleClass="root">
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+    <Text fx:id="headerLabel" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" styleClass="header" />
+
+    <Label fx:id="userNameLabel" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="label" />
+    <TextField fx:id="userNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <Label fx:id="passwordLabel" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <Button fx:id="signInButton" onAction="#handleLoginButton" />
+    </HBox>
+
+    <stylesheets>
+        <URL value="@login.css"/>
+    </stylesheets>
+</GridPane>
