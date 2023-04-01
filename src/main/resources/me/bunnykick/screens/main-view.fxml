@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml" styleClass="root" prefHeight="700" prefWidth="1200">
+    <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+
+    <top>
+        <Text fx:id="headerLabel" BorderPane.alignment="CENTER" styleClass="header">
+            <BorderPane.margin>
+                <Insets bottom="10"/>
+            </BorderPane.margin>
+        </Text>
+    </top>
+
+    <center>
+        <VBox>
+            <TextField fx:id="dayHeader" text="Überschrift"/>
+            <TextArea fx:id="shownText" prefHeight="14000"/>
+        </VBox>
+    </center>
+
+    <left>
+        <VBox>
+            <TreeTableView fx:id="treeView" prefHeight="14000">
+                <BorderPane.margin>
+                    <Insets right="10"/>
+                </BorderPane.margin>
+                <columns>
+                    <TreeTableColumn fx:id="dateCol" text="Datum" prefWidth="150"/>
+                    <TreeTableColumn fx:id="headerCol" text="Überschrift"/>
+                </columns>
+            </TreeTableView>
+            <HBox>
+                <Button fx:id="addNote"/>
+                <Button fx:id="remNote"/>
+            </HBox>
+        </VBox>
+    </left>
+
+    <stylesheets>
+        <URL value="@login.css"/>
+    </stylesheets>
+</BorderPane>
