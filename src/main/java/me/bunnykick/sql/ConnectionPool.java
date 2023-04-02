@@ -12,11 +12,7 @@ public class ConnectionPool {
 
     private static int MAX_CONNECTIONS = 10;
 
-    private final String HOST = "localhost";
-    private final String PORT = "3306";
-    private final String DATABASE = "karteikarten";
-    private final String USERNAME = "root";
-    private final String PASSWORD = "";
+    private final String URL = "E://CodeNotes//Tagebuch.accdb";
 
     List<MyConnection> cons = new ArrayList<>();
 
@@ -26,12 +22,12 @@ public class ConnectionPool {
             throw new ConnectionPoolException("Max count of Connections are in Use: " + cons.size() + "/" + MAX_CONNECTIONS);
         }
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE + "?user=" + USERNAME + "&password=" + PASSWORD);
+            Connection connection = DriverManager.getConnection("jdbc:ucanaccess://" + URL);
             MyConnection con = new MyConnection(connection);
             cons.add(con);
             return con;
         } catch(SQLException e) {
-            System.err.println("Error whilst connecting to database '" + DATABASE + "': " + e.getMessage());
+            System.err.println("Error whilst connecting to database: " + e.getMessage());
             throw e;
         }
     }

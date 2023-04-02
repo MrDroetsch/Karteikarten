@@ -67,19 +67,16 @@ public class bnLogin implements Initializable {
         String userName = userNameTextField.getText();
         String password = passwordField.getText();
 
-        User user = null;
+        User user;
 
         try(MyConnection con = ConnectionPool.getInstance().getConnection(); MyStatement stmt = con.createStatement()) {
-            String[] firstLastName = userName.split(" ");
-            if(firstLastName.length >= 2) {
-                user = User.getUserFromDB(stmt, firstLastName[0], firstLastName[1]);
-            }
+            user = User.getUserFromDB(stmt, userName);
         } catch(SQLException | ConnectionPoolException e) {
             Dialogues.showErrorMessage("Fehler bei der Verbindung mit der Datenbank!", e);
             return;
         }
 
-        if(user == null || !password.equals(user.getPassword())) {
+        if(user == null || !user.isCorrectPW(password)) {
             Dialogues.showDialog("Falscher Username oder Passwort!", Alert.AlertType.ERROR);
             return;
         }
