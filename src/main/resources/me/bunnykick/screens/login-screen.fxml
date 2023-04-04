@@ -12,10 +12,10 @@
     <Text fx:id="headerLabel" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" styleClass="header"/>
 
     <Label fx:id="userNameLabel" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="label"/>
-    <TextField fx:id="userNameTextField" text="sys admin" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <TextField fx:id="userNameTextField" text="admin" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
     <Label fx:id="passwordLabel" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="label"/>
-    <PasswordField fx:id="passwordField" text="sysadmin" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <PasswordField fx:id="passwordField" text="admin" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
     <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
         <Button fx:id="signInButton" styleClass="login-button"/>

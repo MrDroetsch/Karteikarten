@@ -26,7 +26,7 @@ public abstract class TableRowBase {
         this.state = state;
     }
 
-    protected abstract void save(MyStatement stmt) throws SQLException;
+    public abstract void save(MyStatement stmt) throws SQLException;
     public abstract String getSelect();
     protected abstract void fill(ResultSet rslt) throws SQLException;
     protected abstract String getTableName();

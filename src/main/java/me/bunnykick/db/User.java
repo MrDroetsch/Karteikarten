@@ -41,7 +41,7 @@ public class User extends TableRowBase {
     }
 
     @Override
-    protected void save(MyStatement stmt) throws SQLException {
+    public void save(MyStatement stmt) throws SQLException {
         switch(state) {
             case ROW_NONE -> {}
             case ROW_ADD -> {

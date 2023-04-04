@@ -3,6 +3,7 @@ package me.bunnykick;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import me.bunnykick.db.DB;
+import me.bunnykick.db.User;
 import me.bunnykick.screens.Login;
 import me.bunnykick.screens.MainView;
 import me.bunnykick.sql.ConnectionPool;
@@ -23,12 +24,12 @@ public class Proj extends Application {
     public void start(Stage stage) throws Exception {
         this.stage = stage;
 
-        if(!mySQLConnect()) System.exit(0);
+        if(!sqLiteConnect()) System.exit(0);
 
         showLogin();
     }
 
-    private boolean mySQLConnect() {
+    private boolean sqLiteConnect() {
         conPool = ConnectionPool.getInstance();
         try {
             db = new DB(conPool);
@@ -44,8 +45,8 @@ public class Proj extends Application {
         login.showLoginScreen(stage);
     }
 
-    public void showMainView() throws IOException {
-        mainView = new MainView(db, this);
+    public void showMainView(User user) throws IOException {
+        mainView = new MainView(db, user, this);
         mainView.showMainView(stage);
     }
 

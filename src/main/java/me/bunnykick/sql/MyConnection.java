@@ -31,10 +31,12 @@ public class MyConnection implements AutoCloseable {
     }
 
     public void commit() throws SQLException {
-        for(MyStatement stmt : stmts) {
-            stmt.close();
+        if(stmts.size() > 0) {
+            for(MyStatement stmt : stmts) {
+                stmt.close();
+            }
+            stmts.clear();
         }
-        stmts.clear();
         con.commit();
     }
 

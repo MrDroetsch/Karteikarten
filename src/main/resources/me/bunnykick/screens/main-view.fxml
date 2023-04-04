@@ -19,7 +19,7 @@
 
     <center>
         <VBox>
-            <TextField fx:id="dayHeader" text="Überschrift"/>
+            <TextField fx:id="noteHeader" text="Überschrift"/>
             <TextArea fx:id="shownText" prefHeight="14000"/>
         </VBox>
     </center>
@@ -27,17 +27,15 @@
     <left>
         <VBox>
             <TreeTableView fx:id="treeView" prefHeight="14000">
-                <BorderPane.margin>
-                    <Insets right="10"/>
-                </BorderPane.margin>
                 <columns>
                     <TreeTableColumn fx:id="dateCol" text="Datum" prefWidth="150"/>
-                    <TreeTableColumn fx:id="headerCol" text="Überschrift"/>
+                    <TreeTableColumn fx:id="headerCol" text="Überschrift" prefWidth="150"/>
                 </columns>
             </TreeTableView>
             <HBox>
-                <Button fx:id="addNote"/>
-                <Button fx:id="remNote"/>
+                <Button fx:id="addNote" prefWidth="100"/>
+                <Button fx:id="remNote" prefWidth="100"/>
+                <Button fx:id="openNote" prefWidth="100"/>
             </HBox>
         </VBox>
     </left>

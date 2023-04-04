@@ -52,8 +52,8 @@ public class DB {
                 stmt.executeUpdate("CREATE TABLE Note(" +
                         "ID_Note INT NOT NULL PRIMARY KEY," +
                         "Title TEXT NOT NULL," +
-                        "Created DATE NOT NULL," +
-                        "Edited DATE NOT NULL," +
+                        "Created DATETIME NOT NULL," +
+                        "Edited DATETIME NOT NULL," +
                         "UserID INT NOT NULL CONSTRAINT Note_UserID REFERENCES User (ID_User));");
 
                 stmt.executeUpdate("CREATE TABLE Note2Data(" +

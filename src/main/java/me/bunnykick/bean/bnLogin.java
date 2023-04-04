@@ -82,7 +82,7 @@ public class bnLogin implements Initializable {
         }
 
         try {
-            proj.showMainView();
+            proj.showMainView(user);
         } catch (IOException e) {
             Dialogues.showErrorMessage("Fehler beim Wechseln der Scene! ", e);
             // return;

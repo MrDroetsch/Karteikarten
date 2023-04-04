@@ -12,7 +12,7 @@ public class ConnectionPool {
 
     private static int MAX_CONNECTIONS = 10;
 
-    private final String URL = "E://CodeNotes//Tagebuch.accdb";
+    private final String URL = "E://IntelliJ//Hobby_Programming//demo//sqlite.sqlite";
 
     List<MyConnection> cons = new ArrayList<>();
 
@@ -22,7 +22,7 @@ public class ConnectionPool {
             throw new ConnectionPoolException("Max count of Connections are in Use: " + cons.size() + "/" + MAX_CONNECTIONS);
         }
         try {
-            Connection connection = DriverManager.getConnection("jdbc:ucanaccess://" + URL);
+            Connection connection = DriverManager.getConnection("jdbc:sqlite://" + URL);
             MyConnection con = new MyConnection(connection);
             cons.add(con);
             return con;

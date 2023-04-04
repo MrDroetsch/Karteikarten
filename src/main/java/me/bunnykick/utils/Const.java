@@ -7,6 +7,7 @@ public class Const {
 
         public static final String BTN_ADD_TEXT = "Neuer Eintrag";
         public static final String BTN_REM_TEXT = "Eintrag Löschen";
+        public static final String BTN_OPEN_TEXT = "Eintrag Öffnen";
 
         public static final String TXT_JAN = "Januar";
         public static final String TXT_FEB = "Februar";
